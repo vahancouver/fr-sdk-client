@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A58D946027728B83003C9C2B /* FRAuth in Frameworks */ = {isa = PBXBuildFile; productRef = A58D945F27728B83003C9C2B /* FRAuth */; };
+		A58D946227728B83003C9C2B /* FRCore in Frameworks */ = {isa = PBXBuildFile; productRef = A58D946127728B83003C9C2B /* FRCore */; };
+		A58D94662772928D003C9C2B /* FRAuthConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = A58D94652772928D003C9C2B /* FRAuthConfig.plist */; };
 		A58F866B27727DA000652474 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58F866A27727DA000652474 /* AppDelegate.swift */; };
 		A58F866D27727DA000652474 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58F866C27727DA000652474 /* SceneDelegate.swift */; };
 		A58F866F27727DA000652474 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58F866E27727DA000652474 /* ViewController.swift */; };
@@ -16,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A58D94652772928D003C9C2B /* FRAuthConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = FRAuthConfig.plist; sourceTree = "<group>"; };
 		A58F866727727DA000652474 /* FR SDK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FR SDK.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A58F866A27727DA000652474 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A58F866C27727DA000652474 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -31,6 +35,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A58D946027728B83003C9C2B /* FRAuth in Frameworks */,
+				A58D946227728B83003C9C2B /* FRCore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +69,7 @@
 				A58F867327727DA200652474 /* Assets.xcassets */,
 				A58F867527727DA200652474 /* LaunchScreen.storyboard */,
 				A58F867827727DA200652474 /* Info.plist */,
+				A58D94652772928D003C9C2B /* FRAuthConfig.plist */,
 			);
 			path = "FR SDK";
 			sourceTree = "<group>";
@@ -83,6 +90,10 @@
 			dependencies = (
 			);
 			name = "FR SDK";
+			packageProductDependencies = (
+				A58D945F27728B83003C9C2B /* FRAuth */,
+				A58D946127728B83003C9C2B /* FRCore */,
+			);
 			productName = "FR SDK";
 			productReference = A58F866727727DA000652474 /* FR SDK.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +122,9 @@
 				Base,
 			);
 			mainGroup = A58F865E27727DA000652474;
+			packageReferences = (
+				A58D945E27728B83003C9C2B /* XCRemoteSwiftPackageReference "forgerock-ios-sdk" */,
+			);
 			productRefGroup = A58F866827727DA000652474 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -125,6 +139,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A58D94662772928D003C9C2B /* FRAuthConfig.plist in Resources */,
 				A58F867727727DA200652474 /* LaunchScreen.storyboard in Resources */,
 				A58F867427727DA200652474 /* Assets.xcassets in Resources */,
 				A58F867227727DA000652474 /* Main.storyboard in Resources */,
@@ -358,6 +373,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A58D945E27728B83003C9C2B /* XCRemoteSwiftPackageReference "forgerock-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ForgeRock/forgerock-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A58D945F27728B83003C9C2B /* FRAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A58D945E27728B83003C9C2B /* XCRemoteSwiftPackageReference "forgerock-ios-sdk" */;
+			productName = FRAuth;
+		};
+		A58D946127728B83003C9C2B /* FRCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A58D945E27728B83003C9C2B /* XCRemoteSwiftPackageReference "forgerock-ios-sdk" */;
+			productName = FRCore;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A58F865F27727DA000652474 /* Project object */;
 }
