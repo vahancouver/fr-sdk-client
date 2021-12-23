@@ -48,6 +48,13 @@
                                     <action selector="logoutButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gll-w5-nIE"/>
                                 </connections>
                             </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="fNl-dN-lML">
+                                <rect key="frame" x="20" y="66" width="374" height="128"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -57,12 +64,16 @@
                             <constraint firstItem="bbt-sW-Ped" firstAttribute="leading" secondItem="vJZ-ql-efg" secondAttribute="trailing" constant="20" id="4TQ-fc-9tC"/>
                             <constraint firstItem="vJZ-ql-efg" firstAttribute="top" secondItem="765-UE-kvG" secondAttribute="bottom" constant="30" id="4wY-E1-4NC"/>
                             <constraint firstItem="765-UE-kvG" firstAttribute="top" secondItem="dlU-0Z-vpe" secondAttribute="bottom" constant="30" id="9sz-T5-vDd"/>
+                            <constraint firstItem="fNl-dN-lML" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="ABO-KS-7hy"/>
+                            <constraint firstItem="fNl-dN-lML" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="22" id="ELd-82-uQ1"/>
                             <constraint firstItem="dlU-0Z-vpe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Irl-vO-Smv"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="765-UE-kvG" secondAttribute="trailing" constant="20" id="OPB-UT-pN7"/>
                             <constraint firstItem="dlU-0Z-vpe" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="Qbd-RS-PNz"/>
                             <constraint firstItem="vJZ-ql-efg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Zu5-87-0gP"/>
                             <constraint firstItem="LvE-mI-GNF" firstAttribute="top" secondItem="vJZ-ql-efg" secondAttribute="bottom" constant="30" id="gmz-FY-PpS"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dlU-0Z-vpe" secondAttribute="trailing" constant="20" id="mBc-na-JXT"/>
+                            <constraint firstItem="vJZ-ql-efg" firstAttribute="top" secondItem="fNl-dN-lML" secondAttribute="bottom" constant="8" id="pzp-5b-uwi"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fNl-dN-lML" secondAttribute="trailing" constant="20" id="s8V-pB-LSz"/>
                             <constraint firstItem="765-UE-kvG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="sbt-9i-k3R"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="LvE-mI-GNF" secondAttribute="trailing" constant="20" id="wGO-Ro-aNH"/>
                         </constraints>
@@ -72,6 +83,7 @@
                         <outlet property="logoutButton" destination="bbt-sW-Ped" id="bwf-uw-cp8"/>
                         <outlet property="passswordTextField" destination="765-UE-kvG" id="C6Y-TS-VMb"/>
                         <outlet property="statusLabel" destination="LvE-mI-GNF" id="Wyc-Yh-kcx"/>
+                        <outlet property="userInfoTextView" destination="fNl-dN-lML" id="A0X-D5-bx6"/>
                         <outlet property="usernameTextField" destination="dlU-0Z-vpe" id="Cnq-XL-bSD"/>
                     </connections>
                 </viewController>
@@ -81,6 +93,9 @@
         </scene>
     </scenes>
     <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
