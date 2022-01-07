@@ -19,7 +19,7 @@
 	<key>forgerock_timeout</key>
 	<string>60</string>
 	<key>forgerock_auth_service_name</key>
-	<string>UsernamePassword</string>
+	<string>UsernamePasswordCheck</string>
 	<key>forgerock_registration_service_name</key>
 	<string>sdkRegistrationTree</string>
 </dict>

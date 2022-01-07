@@ -9,19 +9,21 @@ import Foundation
 import UIKit
 import FRAuth
 
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController, StatusUpdatable {
     @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var actionButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationItem.title = "Forge Rock"
+        
         //setup and initialize FR SDK
         FRLog.setLogLevel([.network, .all])
         do {
             try FRAuth.start()
             print("SDK initialized successfully")
-            updateStatus("SDK ready")
+            updateStatus("SDK ready", type: .success)
         }
         catch {
             print(error)
@@ -30,22 +32,30 @@ class HomeViewController: UIViewController {
         //check for existing user
         if FRUser.currentUser != nil {
             updateUI(loggedIn: true)
-            updateStatus("Logged in user detected")
+            updateStatus("Logged in user detected", type: .info)
         } else {
             updateUI(loggedIn: false)
-            updateStatus("Please log in")
+            updateStatus("Please log in", type: .info)
         }
-        
-        navigationItem.title = "Forge Rock"
     }
     
     @IBAction func actionButtontapped(_ sender: UIButton) {
         if FRUser.currentUser == nil {
-            pushLoginVC()
+            FRUser.login() { user, node, error in
+                if error != nil {
+                    print(error.debugDescription)
+                    self.updateStatus("Authentication Error", type: .error)
+                } else if user != nil {
+                    self.updateStatus("Login Success:", type: .success)
+                } else if let node = node {
+                    self.pushNodeVC(node)
+                }
+                
+            }
         } else {
             FRUser.currentUser?.logout()
             updateUI(loggedIn: false)
-            updateStatus("Logged out")
+            updateStatus("Logged out", type: .success)
         }
     }
     
@@ -55,15 +65,13 @@ class HomeViewController: UIViewController {
         }
     }
     
-    private func updateStatus(_ status: String) {
+    private func pushNodeVC(_ node: Node) {
         DispatchQueue.main.async {
-            self.statusLabel.text = status
+            if let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "NodeViewController") as? NodeViewController {
+                viewController.node = node
+                self.navigationController?.pushViewController(viewController, animated: true)
+            }
         }
-    }
-    
-    private func pushLoginVC() {
-        let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController") as UIViewController
-        navigationController?.pushViewController(viewController, animated: true)
     }
     
 }

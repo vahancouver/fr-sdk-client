@@ -9,27 +9,24 @@ import Foundation
 import UIKit
 import FRAuth
 
-class UserInfoViewController: UIViewController {
+class UserInfoViewController: UIViewController, StatusUpdatable {
     @IBOutlet weak var logoutButton: UIButton!
     @IBOutlet weak var userInfoTextView: UITextView!
     @IBOutlet weak var statusLabel: UILabel!
     
     override func loadView() {
         super.loadView()
+        
         navigationItem.hidesBackButton = true
+        navigationItem.title = "User Info"
+        
         loadUserInfo()
     }
     
     @IBAction func logoutButtonClicked(_ sender: UIButton) {
         FRUser.currentUser?.logout()
-        updateStatus("Logged out")
+        updateStatus("Logged out", type: .success)
         navigationController?.popToRootViewController(animated: true)
-    }
-    
-    private func updateStatus(_ status: String) {
-        DispatchQueue.main.async {
-            self.statusLabel.text = status
-        }
     }
     
     private func loadUserInfo() {
@@ -37,7 +34,27 @@ class UserInfoViewController: UIViewController {
             if let error = error {
                 self.updateUserInfo(error.localizedDescription)
             } else if let userInfo = userInfo {
-                self.updateUserInfo(userInfo.debugDescription)
+                var desc = ""
+                if let name = userInfo.name {
+                    desc += "Name: " + name
+                }
+                if let preferredUsername = userInfo.preferredUsername {
+                    desc += "\nPreferred Username: " + preferredUsername
+                }
+                if let sub = userInfo.sub {
+                    desc += "\nSub: " + sub
+                }
+                if let email = userInfo.email {
+                    desc += "\nEmail: " + email
+                }
+                if let phoneNumber = userInfo.phoneNumber {
+                    desc += "\nPhone Number: " + phoneNumber
+                }
+                if let birthDate = userInfo.birthDate {
+                    desc += "\nBirth Date: " + String(describing: birthDate)
+                }
+                
+                self.updateUserInfo(desc)
             }
         })
     }
@@ -48,3 +65,4 @@ class UserInfoViewController: UIViewController {
         }
     }
 }
+
