@@ -7,9 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A53977E12784ECF600E3526C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53977E02784ECF600E3526C /* HomeViewController.swift */; };
+		A53977E12784ECF600E3526C /* EmbeddedLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53977E02784ECF600E3526C /* EmbeddedLoginViewController.swift */; };
 		A53977E3278662B200E3526C /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53977E2278662B200E3526C /* UserInfoViewController.swift */; };
-		A53977E52788C86A00E3526C /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53977E42788C86A00E3526C /* Protocols.swift */; };
+		A53977E52788C86A00E3526C /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53977E42788C86A00E3526C /* Helpers.swift */; };
+		A53977E7278CE47E00E3526C /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53977E6278CE47E00E3526C /* InitialViewController.swift */; };
+		A53977E9278CE84500E3526C /* FRAuthConfigCentralized.plist in Resources */ = {isa = PBXBuildFile; fileRef = A53977E8278CE84500E3526C /* FRAuthConfigCentralized.plist */; };
+		A53977EB278CF1AC00E3526C /* CentralizedLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53977EA278CF1AC00E3526C /* CentralizedLoginViewController.swift */; };
 		A58D946027728B83003C9C2B /* FRAuth in Frameworks */ = {isa = PBXBuildFile; productRef = A58D945F27728B83003C9C2B /* FRAuth */; };
 		A58D946227728B83003C9C2B /* FRCore in Frameworks */ = {isa = PBXBuildFile; productRef = A58D946127728B83003C9C2B /* FRCore */; };
 		A58D94662772928D003C9C2B /* FRAuthConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = A58D94652772928D003C9C2B /* FRAuthConfig.plist */; };
@@ -22,9 +25,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		A53977E02784ECF600E3526C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		A53977E02784ECF600E3526C /* EmbeddedLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmbeddedLoginViewController.swift; sourceTree = "<group>"; };
 		A53977E2278662B200E3526C /* UserInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
-		A53977E42788C86A00E3526C /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
+		A53977E42788C86A00E3526C /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		A53977E6278CE47E00E3526C /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
+		A53977E8278CE84500E3526C /* FRAuthConfigCentralized.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = FRAuthConfigCentralized.plist; sourceTree = "<group>"; };
+		A53977EA278CF1AC00E3526C /* CentralizedLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CentralizedLoginViewController.swift; sourceTree = "<group>"; };
 		A58D94652772928D003C9C2B /* FRAuthConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = FRAuthConfig.plist; sourceTree = "<group>"; };
 		A58F866727727DA000652474 /* FR SDK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FR SDK.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A58F866A27727DA000652474 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -70,14 +76,17 @@
 			children = (
 				A58F866A27727DA000652474 /* AppDelegate.swift */,
 				A58F866C27727DA000652474 /* SceneDelegate.swift */,
-				A53977E02784ECF600E3526C /* HomeViewController.swift */,
+				A53977E6278CE47E00E3526C /* InitialViewController.swift */,
+				A53977E02784ECF600E3526C /* EmbeddedLoginViewController.swift */,
+				A53977EA278CF1AC00E3526C /* CentralizedLoginViewController.swift */,
 				A58F866E27727DA000652474 /* NodeViewController.swift */,
 				A53977E2278662B200E3526C /* UserInfoViewController.swift */,
-				A53977E42788C86A00E3526C /* Protocols.swift */,
+				A53977E42788C86A00E3526C /* Helpers.swift */,
 				A58F867027727DA000652474 /* Main.storyboard */,
 				A58F867327727DA200652474 /* Assets.xcassets */,
 				A58F867527727DA200652474 /* LaunchScreen.storyboard */,
 				A58F867827727DA200652474 /* Info.plist */,
+				A53977E8278CE84500E3526C /* FRAuthConfigCentralized.plist */,
 				A58D94652772928D003C9C2B /* FRAuthConfig.plist */,
 			);
 			path = "FR SDK";
@@ -151,6 +160,7 @@
 				A58D94662772928D003C9C2B /* FRAuthConfig.plist in Resources */,
 				A58F867727727DA200652474 /* LaunchScreen.storyboard in Resources */,
 				A58F867427727DA200652474 /* Assets.xcassets in Resources */,
+				A53977E9278CE84500E3526C /* FRAuthConfigCentralized.plist in Resources */,
 				A58F867227727DA000652474 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -163,11 +173,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				A58F866F27727DA000652474 /* NodeViewController.swift in Sources */,
+				A53977E7278CE47E00E3526C /* InitialViewController.swift in Sources */,
 				A58F866B27727DA000652474 /* AppDelegate.swift in Sources */,
 				A53977E3278662B200E3526C /* UserInfoViewController.swift in Sources */,
-				A53977E52788C86A00E3526C /* Protocols.swift in Sources */,
+				A53977EB278CF1AC00E3526C /* CentralizedLoginViewController.swift in Sources */,
+				A53977E52788C86A00E3526C /* Helpers.swift in Sources */,
 				A58F866D27727DA000652474 /* SceneDelegate.swift in Sources */,
-				A53977E12784ECF600E3526C /* HomeViewController.swift in Sources */,
+				A53977E12784ECF600E3526C /* EmbeddedLoginViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

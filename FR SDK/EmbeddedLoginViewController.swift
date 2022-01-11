@@ -1,5 +1,5 @@
 //
-//  HomeViewController.swift
+//  EmbeddedLoginViewController.swift
 //  FR SDK
 //
 //  Created by vahan.harutyunyan  on 1/4/22.
@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 import FRAuth
 
-class HomeViewController: UIViewController, StatusUpdatable {
+class EmbeddedLoginViewController: UIViewController, StatusUpdatable, ViewControllerPushing {
     @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var actionButton: UIButton!
     
@@ -20,6 +20,7 @@ class HomeViewController: UIViewController, StatusUpdatable {
         
         //setup and initialize FR SDK
         FRLog.setLogLevel([.network, .all])
+        FRAuth.configPlistFileName = "FRAuthConfig"
         do {
             try FRAuth.start()
             print("SDK initialized successfully")
@@ -47,6 +48,7 @@ class HomeViewController: UIViewController, StatusUpdatable {
                     self.updateStatus("Authentication Error", type: .error)
                 } else if user != nil {
                     self.updateStatus("Login Success:", type: .success)
+                    self.pushUserInfoVC()
                 } else if let node = node {
                     self.pushNodeVC(node)
                 }
@@ -62,15 +64,6 @@ class HomeViewController: UIViewController, StatusUpdatable {
     private func updateUI(loggedIn: Bool) {
         DispatchQueue.main.async {
             self.actionButton.setTitle(loggedIn ? "Logout" : "Login", for: .normal)
-        }
-    }
-    
-    private func pushNodeVC(_ node: Node) {
-        DispatchQueue.main.async {
-            if let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "NodeViewController") as? NodeViewController {
-                viewController.node = node
-                self.navigationController?.pushViewController(viewController, animated: true)
-            }
         }
     }
     

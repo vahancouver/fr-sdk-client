@@ -13,7 +13,7 @@
 import UIKit
 import FRAuth
 
-class NodeViewController: UIViewController, StatusUpdatable {
+class NodeViewController: UIViewController, StatusUpdatable, ViewControllerPushing {
     @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var containerStackView: UIStackView!
     @IBOutlet weak var actionButton: UIButton!
@@ -88,21 +88,6 @@ class NodeViewController: UIViewController, StatusUpdatable {
         }
     }
     
-    private func pushUserInfoVC() {
-        DispatchQueue.main.async {
-            let viewController: UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "UserInfoViewController") as UIViewController
-            self.navigationController?.pushViewController(viewController, animated: true)
-        }
-    }
-    
-    private func pushNodeVC(_ node: Node) {
-        DispatchQueue.main.async {
-            if let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "NodeViewController") as? NodeViewController {
-                viewController.node = node
-                self.navigationController?.pushViewController(viewController, animated: true)
-            }
-        }
-    }
 }
 
 extension NodeViewController {

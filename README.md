@@ -8,4 +8,5 @@ Built using Xcode 13.2
 2. [Login(with username/password) and logout using FRSession](https://github.com/vahancouver/fr-sdk-client/tree/d3de056d2b8887e0c3533bfad4c5bb11c50026c0)
 3. [Add an OAuth flow to the basic username-password using FRUser](https://github.com/vahancouver/fr-sdk-client/tree/6be2cb8706583a045cdb4cf5edc4b5100d2fe960)
 4. [Improve the UI and UX from the last step ](https://github.com/vahancouver/fr-sdk-client/tree/92c04827f016fb730555891fe31a77ef6dac543b)
-5. Refactor the form and authentication flow to be callback driven
+5. [Refactor the form and authentication flow to be callback driven](https://github.com/vahancouver/fr-sdk-client/tree/4b2c57bcfa906d1f04fa8814a6589b6ba8bc97d7)
+6. Add Centralized Login

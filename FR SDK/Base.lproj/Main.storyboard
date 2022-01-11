@@ -29,7 +29,6 @@
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="actionButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eNB-VB-xTy"/>
-                                    <action selector="actionButtontapped:" destination="kiM-bi-644" eventType="touchUpInside" id="SsV-Mb-fkF"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LvE-mI-GNF">
@@ -60,7 +59,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="18.840579710144929" y="97.767857142857139"/>
+            <point key="canvasLocation" x="-630" y="102"/>
         </scene>
         <!--User Info View Controller-->
         <scene sceneID="yFZ-bZ-1z4">
@@ -90,7 +89,6 @@
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="actionButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bwH-Lt-bSl"/>
-                                    <action selector="actionButtontapped:" destination="kiM-bi-644" eventType="touchUpInside" id="3gu-Vf-M0M"/>
                                     <action selector="logoutButtonClicked:" destination="t9W-q7-gEm" eventType="touchUpInside" id="IpO-Ny-5bA"/>
                                 </connections>
                             </button>
@@ -122,18 +120,18 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BQ7-cR-gJl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="946.37681159420299" y="119.86607142857142"/>
+            <point key="canvasLocation" x="143" y="102"/>
         </scene>
-        <!--Home View Controller-->
-        <scene sceneID="j8o-3O-neo">
+        <!--Initial View Controller-->
+        <scene sceneID="4Hh-IN-vr3">
             <objects>
-                <viewController id="kiM-bi-644" customClass="HomeViewController" customModule="FR_SDK" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="hTP-YB-vDO">
+                <viewController id="CZO-AM-0En" customClass="InitialViewController" customModule="FR_SDK" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="doZ-Pm-IOT">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Ec-hk-h3S">
-                                <rect key="frame" x="122" y="118" width="170" height="115"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0qt-0J-L8c">
+                                <rect key="frame" x="122" y="188" width="170" height="115"/>
                                 <string key="text">Welcome to 
 ForgeRock 
 iOS SDK</string>
@@ -141,8 +139,80 @@ iOS SDK</string>
                                 <color key="textColor" systemColor="systemIndigoColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y5H-Pb-yvp">
+                                <rect key="frame" x="126" y="373" width="162" height="32"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" image="iphone" catalog="system" title="Embedded Login">
+                                    <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="15"/>
+                                    <color key="baseForegroundColor" systemColor="systemOrangeColor"/>
+                                    <color key="baseBackgroundColor" systemColor="systemIndigoColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="enbeddedLoginTapped:" destination="CZO-AM-0En" eventType="touchUpInside" id="5qD-QI-oRH"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XaI-iW-d9t">
+                                <rect key="frame" x="122" y="455" width="170" height="32"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" image="globe" catalog="system" title="Centralized Login">
+                                    <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="15"/>
+                                    <color key="baseForegroundColor" systemColor="systemOrangeColor"/>
+                                    <color key="baseBackgroundColor" systemColor="systemIndigoColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="centralizedLoginTapped:" destination="CZO-AM-0En" eventType="touchUpInside" id="75A-uf-1Ns"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Txk-wK-53m"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="y5H-Pb-yvp" firstAttribute="top" secondItem="0qt-0J-L8c" secondAttribute="bottom" constant="70" id="2sf-oH-Lm9"/>
+                            <constraint firstItem="XaI-iW-d9t" firstAttribute="top" secondItem="y5H-Pb-yvp" secondAttribute="bottom" constant="50" id="3Jt-7G-dvR"/>
+                            <constraint firstItem="y5H-Pb-yvp" firstAttribute="centerX" secondItem="doZ-Pm-IOT" secondAttribute="centerX" id="4I3-iH-SKi"/>
+                            <constraint firstItem="XaI-iW-d9t" firstAttribute="centerX" secondItem="doZ-Pm-IOT" secondAttribute="centerX" id="Brb-XC-4nj"/>
+                            <constraint firstItem="0qt-0J-L8c" firstAttribute="centerX" secondItem="doZ-Pm-IOT" secondAttribute="centerX" id="j61-Jk-dza"/>
+                            <constraint firstItem="0qt-0J-L8c" firstAttribute="top" secondItem="Txk-wK-53m" secondAttribute="top" constant="100" id="oqa-fc-ynX"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="44k-cO-8M2"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GjJ-Iw-Y5N" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="180" y="-1296"/>
+        </scene>
+        <!--Embedded Login View Controller-->
+        <scene sceneID="j8o-3O-neo">
+            <objects>
+                <viewController storyboardIdentifier="EmbeddedLoginViewController" id="kiM-bi-644" customClass="EmbeddedLoginViewController" customModule="FR_SDK" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hTP-YB-vDO">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Ec-hk-h3S">
+                                <rect key="frame" x="132" y="99" width="150.5" height="76.5"/>
+                                <string key="text">Embedded
+Login</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <color key="textColor" systemColor="systemIndigoColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JpU-ZG-kDo">
+                                <rect key="frame" x="10" y="59" width="394" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iphone.homebutton" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="vyJ-KK-dgQ">
+                                <rect key="frame" x="132" y="225.5" width="150" height="150"/>
+                                <color key="tintColor" systemColor="systemIndigoColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="DXu-n7-IWj"/>
+                                    <constraint firstAttribute="height" constant="150" id="i7h-mI-0wC"/>
+                                </constraints>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eJa-pX-7TX">
-                                <rect key="frame" x="175.5" y="263" width="63.5" height="32"/>
+                                <rect key="frame" x="175.5" y="425.5" width="63.5" height="32"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="Login">
                                     <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="15"/>
@@ -153,22 +223,18 @@ iOS SDK</string>
                                     <action selector="actionButtontapped:" destination="kiM-bi-644" eventType="touchUpInside" id="IzT-9W-OjQ"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JpU-ZG-kDo">
-                                <rect key="frame" x="10" y="103" width="394" height="0.0"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="dj9-1d-RzL"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="JpU-ZG-kDo" firstAttribute="leading" secondItem="dj9-1d-RzL" secondAttribute="leading" constant="10" id="0Dq-IF-U6d"/>
-                            <constraint firstItem="2Ec-hk-h3S" firstAttribute="top" secondItem="JpU-ZG-kDo" secondAttribute="bottom" constant="15" id="4xJ-fw-guT"/>
+                            <constraint firstItem="2Ec-hk-h3S" firstAttribute="top" secondItem="JpU-ZG-kDo" secondAttribute="bottom" constant="40" id="4xJ-fw-guT"/>
+                            <constraint firstItem="vyJ-KK-dgQ" firstAttribute="centerX" secondItem="hTP-YB-vDO" secondAttribute="centerX" id="7uP-M0-QPL"/>
+                            <constraint firstItem="vyJ-KK-dgQ" firstAttribute="top" secondItem="2Ec-hk-h3S" secondAttribute="bottom" constant="50" id="9Iw-nm-dKI"/>
                             <constraint firstItem="dj9-1d-RzL" firstAttribute="trailing" secondItem="JpU-ZG-kDo" secondAttribute="trailing" constant="10" id="HhF-Qj-tdR"/>
                             <constraint firstItem="eJa-pX-7TX" firstAttribute="centerX" secondItem="hTP-YB-vDO" secondAttribute="centerX" id="U1b-Ma-Zcf"/>
                             <constraint firstItem="JpU-ZG-kDo" firstAttribute="top" secondItem="dj9-1d-RzL" secondAttribute="top" constant="15" id="WmO-FJ-Uub"/>
-                            <constraint firstItem="eJa-pX-7TX" firstAttribute="top" secondItem="2Ec-hk-h3S" secondAttribute="bottom" constant="30" id="eIi-pe-fdR"/>
+                            <constraint firstItem="eJa-pX-7TX" firstAttribute="top" secondItem="vyJ-KK-dgQ" secondAttribute="bottom" constant="50" id="aSg-i3-gUF"/>
                             <constraint firstItem="2Ec-hk-h3S" firstAttribute="centerX" secondItem="hTP-YB-vDO" secondAttribute="centerX" id="gvj-YS-s6v"/>
                         </constraints>
                     </view>
@@ -180,7 +246,73 @@ iOS SDK</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="53o-yg-QSl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="550.72463768115949" y="-575.22321428571422"/>
+            <point key="canvasLocation" x="-630" y="-596"/>
+        </scene>
+        <!--Centralized Login View Controller-->
+        <scene sceneID="A7f-Hf-aGu">
+            <objects>
+                <viewController storyboardIdentifier="CentralizedLoginViewController" id="9RK-U1-Mvp" customClass="CentralizedLoginViewController" customModule="FR_SDK" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nZW-8m-NbC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X1l-vH-yEt">
+                                <rect key="frame" x="129" y="99" width="156.5" height="76.5"/>
+                                <string key="text">Centralized
+Login</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <color key="textColor" systemColor="systemIndigoColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V2L-aE-dI8">
+                                <rect key="frame" x="30" y="59" width="354" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="globe" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="PBl-T6-rUw">
+                                <rect key="frame" x="132" y="226" width="150" height="149"/>
+                                <color key="tintColor" systemColor="systemIndigoColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="T3v-CI-qX9"/>
+                                    <constraint firstAttribute="width" constant="150" id="h6I-fz-51s"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tmf-0l-1eC">
+                                <rect key="frame" x="175.5" y="425.5" width="63.5" height="32"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="Login">
+                                    <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="15"/>
+                                    <color key="baseForegroundColor" systemColor="systemOrangeColor"/>
+                                    <color key="baseBackgroundColor" systemColor="systemIndigoColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="actionButtontapped:" destination="9RK-U1-Mvp" eventType="touchUpInside" id="JNZ-1t-bqL"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="dll-us-HRn"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="tmf-0l-1eC" firstAttribute="centerX" secondItem="nZW-8m-NbC" secondAttribute="centerX" id="1Af-Ea-8Pw"/>
+                            <constraint firstItem="PBl-T6-rUw" firstAttribute="centerX" secondItem="nZW-8m-NbC" secondAttribute="centerX" id="Sqg-TL-I4E"/>
+                            <constraint firstItem="V2L-aE-dI8" firstAttribute="top" secondItem="nZW-8m-NbC" secondAttribute="topMargin" constant="15" id="V6j-b4-KVa"/>
+                            <constraint firstItem="V2L-aE-dI8" firstAttribute="leading" secondItem="nZW-8m-NbC" secondAttribute="leadingMargin" constant="10" id="X3l-a8-0l6"/>
+                            <constraint firstItem="PBl-T6-rUw" firstAttribute="top" secondItem="X1l-vH-yEt" secondAttribute="bottom" constant="50" id="hk4-l0-hUd"/>
+                            <constraint firstItem="X1l-vH-yEt" firstAttribute="top" secondItem="V2L-aE-dI8" secondAttribute="bottom" constant="40" id="jLw-ub-u9E"/>
+                            <constraint firstItem="tmf-0l-1eC" firstAttribute="top" secondItem="PBl-T6-rUw" secondAttribute="bottom" constant="50" id="lAD-QO-JoF"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="V2L-aE-dI8" secondAttribute="trailing" constant="10" id="o67-xL-t76"/>
+                            <constraint firstItem="X1l-vH-yEt" firstAttribute="centerX" secondItem="nZW-8m-NbC" secondAttribute="centerX" id="z8g-vr-PCk"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="actionButton" destination="tmf-0l-1eC" id="ySu-aH-lY7"/>
+                        <outlet property="statusLabel" destination="V2L-aE-dI8" id="gK8-du-B5v"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PFk-FO-kRd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="232" y="-597"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="vX2-44-H9u">
@@ -197,15 +329,18 @@ iOS SDK</string>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="kiM-bi-644" kind="relationship" relationship="rootViewController" id="vvv-6z-LqF"/>
+                        <segue destination="CZO-AM-0En" kind="relationship" relationship="rootViewController" id="E2j-RP-bms"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hRT-Hi-BGo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-359.4202898550725" y="-575.22321428571422"/>
+            <point key="canvasLocation" x="-630" y="-1296"/>
         </scene>
     </scenes>
     <resources>
+        <image name="globe" catalog="system" width="128" height="121"/>
+        <image name="iphone" catalog="system" width="108" height="128"/>
+        <image name="iphone.homebutton" catalog="system" width="108" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
